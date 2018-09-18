@@ -1,13 +1,15 @@
-from data_struct import DataStruct
+from datastruct import DataStruct
 from menu import Menu
 store = DataStruct()
 
+
 class Orders:
-    """This class handles all order stuff"""
-    def __init__(self,user_name, menu_id, status=None):
+    """This class handles all orders"""
+    def __init__(self,user_name="", menu_id="", status=""):
         self.user_name= user_name
         self.status = "pending"
         self.menu_id = menu_id
+     
 
     def save_order(self):
         
@@ -24,4 +26,3 @@ class Orders:
         }
 
         store.add_order(self.order)
-    

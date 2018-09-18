@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, json, request
-from data_struct import DataStruct
+from datastruct import DataStruct
 from menu import Menu
 from users import Users
 from orders import Orders

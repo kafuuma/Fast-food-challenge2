@@ -1,11 +1,11 @@
 
-from data_struct import DataStruct
+from datastruct import DataStruct
 store = DataStruct()
 
 class Users:
     """This class handles users, manipulation stuff"""
 
-    def __init__(self, full_name, password, email="", contact="" ,user_role=""):
+    def __init__(self, full_name="", password="", email="", contact="" ,user_role=""):
         self.name = full_name
         self.password = password
         self.email = email

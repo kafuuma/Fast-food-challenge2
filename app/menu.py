@@ -1,9 +1,9 @@
-from data_struct import DataStruct
+from datastruct import DataStruct
 store = DataStruct()
 
 class Menu:
     """This class does all the menu related stuff"""
-    def __init__(self,menu_name, description):
+    def __init__(self,menu_name="", description=""):
         self.menu_name = menu_name
         self.description = description
 

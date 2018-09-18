@@ -1,14 +1,15 @@
 
 class DataStruct:
+    menu = []
+    users =[]
+    orders = []
     """
     This class implements a data structure to store and retrieve
     users, userorders and menu istes
     """
     def __init__(self, user_name=""):
         self.user_name = user_name
-        self.menu = []
-        self.users =[]
-        self.orders = []
+      
         
     def add_menu_item(self, menu_item):
         """This method adds a menu item"""
