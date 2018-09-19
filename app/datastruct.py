@@ -22,11 +22,11 @@ class DataStruct:
     def add_order(self, order):
         """This method appends an order to the order list"""
         for menu_item in self.menu:
-            if order["menu_id"] in menu_item:
+            if menu_item["menu_id"] == order["menu_id"]:
                 self.orders.append(order)
                 return True
-            return False
-
+        return False
+            
 
     def fetch_all_orders(self):
         """This method returns all orders for users"""
@@ -41,12 +41,12 @@ class DataStruct:
             for order in self.orders:
                 if order["order_id"] == order_id:
                     return order
-        return None
+            return None
         
     def update_order_status(self, status, order_id):
         for order in self.orders:
             if order["order_id"] == order_id:
                 order["status"] == status
-            return True
+        return True
 
     

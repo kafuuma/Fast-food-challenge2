@@ -6,41 +6,42 @@ from orders import Orders
 
 app = Flask(__name__)
 
-@app.route("/api/v1/orders/",methods=["GET"])
+@app.route("/api/v1/users/orders", methods=["GET"])
 def get_all_orders():
     """creates end point to fetch all food orders"""
     store = DataStruct()
     all_orders = store.fetch_all_orders()
-    if all_orders:
+    if len(all_orders)>=1:
         return jsonify({"response": all_orders}), 200
-    return jsonify({"response":"Empty orders"})
+    return jsonify({"response":"Empty orders"}),400
 
 
 
-@app.route("/api/v1/orders/<order_id>", methods=["GET"])
+@app.route("/api/v1/users/orders/<order_id>", methods=["GET"])
 def fetch_order(order_id):
     """This route fetches a sigle order by id"""
     store = DataStruct()
     user_order = store.fetch_order(int(order_id))
     if user_order:
         return jsonify({"response":user_order}),200
-    return jsonify({"response":"order doesn't exist"})
+    return jsonify({"response":"order doesn't exist"}),400
     
 
-@app.route("/api/v1/orders", methods=["POST"])
+@app.route("/api/v1/users/orders", methods=["POST"])
 def palce_order():
     store = DataStruct()
     user_order = request.get_json()
-    menu_id = user_order.get("menu_id")
     user_name = user_order.get("user_name")
-    Orders(user_name, menu_id)
+    menu_id = user_order.get("menu_id")
+    Orders(user_name, menu_id).save_order()
     if len(store.orders)>0:
         return jsonify({"response":"success"}),200
-    return jsonify({"response":"failure"})
+    return jsonify({"reponse":"failure"}),400
 
-    
 
-@app.route("/api/v1/orders/<order_id>", methods=["PUT"])
+
+
+@app.route("/api/v1/users/orders/<int:order_id>", methods=["PUT"])
 def update_order_status(order_id):
     store = DataStruct()
     status = request.get_json()
@@ -48,5 +49,7 @@ def update_order_status(order_id):
     response = store.update_order_status(order_status, order_id)
     if response:
         return jsonify({"response": "success"}), 200
-    return jsonify({"response":"no such order exists"})
+    return jsonify({"response":"no such order exists"}),400
+
+
     
