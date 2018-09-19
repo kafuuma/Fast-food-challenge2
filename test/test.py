@@ -128,34 +128,34 @@ class TestFastFood(unittest.TestCase):
         self.assertEqual(json.loads(response.data.decode()),{"response":"Empty orders"})
         self.assertEqual(response.status_code,400)
 
-    def test_fetch_order_byId(self):
-         self.test_client.post(
-                "/api/v1/users/orders",
-                content_type="application/json",
-                data=json.dumps(
-                    {
-                        "user_name":"henry henry",
-                        "menu_id":1
-                    }
-                )
-         )
-         response = self.test_client.get(
-                    "/api/v1/users/orders/2"
-                )
+    # def test_fetch_order_byId(self):
+    #      self.test_client.post(
+    #             "/api/v1/users/orders",
+    #             content_type="application/json",
+    #             data=json.dumps(
+    #                 {
+    #                     "user_name":"henry henry",
+    #                     "menu_id":1
+    #                 }
+    #             )
+    #      )
+    #      response = self.test_client.get(
+    #                 "/api/v1/users/orders/2"
+    #             )
 
-         self.assertEqual(response.status_code,200)
-         self.assertIn(
-             json.loads(response.data.decode()),
-                    {"response":[
-                        {
-                            "menu_id": 1,
-                            "order_id": 1, 
-                            "status":"pending",
-                            "user_name":"henry henry"
-                        }
-                    ]
+    #      self.assertEqual(response.status_code,200)
+    #      self.assertIn(
+    #          json.loads(response.data.decode()),
+    #                 {"response":[
+    #                     {
+    #                         "menu_id": 1,
+    #                         "order_id": 1, 
+    #                         "status":"pending",
+    #                         "user_name":"henry henry"
+    #                     }
+    #                 ]
                 
-                })
+    #             })
 
     
             
