@@ -22,7 +22,7 @@ def fetch_order(order_id):
     """This route fetches a sigle order by id"""
     store = DataStruct()
     user_order = store.fetch_order(int(order_id))
-    if user_order:
+    if user_order != None:
         return jsonify({"response":user_order}),200
     return jsonify({"response":"order doesn't exist"}),400
     
@@ -48,7 +48,7 @@ def update_order_status(order_id):
     order_status = status.get("status")
     response = store.update_order_status(order_status, order_id)
     if response:
-        return jsonify({"response": "success"}), 200
+        return jsonify({"response": response}), 200
     return jsonify({"response":"no such order exists"}),400
 
 

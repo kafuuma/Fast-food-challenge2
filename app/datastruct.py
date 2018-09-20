@@ -47,6 +47,7 @@ class DataStruct:
         for order in self.orders:
             if order["order_id"] == order_id:
                 order["status"] == status
-        return True
+            return order
+        return None
 
     
