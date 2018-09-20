@@ -1,0 +1,30 @@
+
+language: python
+
+python:
+  - "2.7"
+  - "3.5"
+  - "3.6"
+
+cache: pip
+
+install:
+  - pip install -r requirements.txt
+
+script:
+  - python -m unittest discover -v
+  - coverage report
+
+after_success:
+  - coveralls
+  - Rscript -e 'covr::coveralls()'
+
+
+
+
+
+
+
+
+
+
