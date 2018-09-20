@@ -148,7 +148,7 @@ class TestFastFood(unittest.TestCase):
          self.assertEqual(response.status_code, 200)
 
          self.assertEqual(response.status_code,200)
-         self.assertIn(
+         self.assertEqual(
              json.loads(response.data.decode()),
                     {"response":[
                         {
@@ -190,7 +190,7 @@ class TestFastFood(unittest.TestCase):
                 )
             )
         self.assertEqual(response.status_code,200)
-        self.assertIn(
+        self.assertEqual(
              json.loads(response.data.decode()),
                     {"response":[
                         {

@@ -22,7 +22,7 @@ def fetch_order(order_id):
     """This route fetches a sigle order by id"""
     store = DataStruct()
     user_order = store.fetch_order(int(order_id))
-    if user_order != None:
+    if user_order:
         return jsonify({"response":user_order}),200
     return jsonify({"response":"order doesn't exist"}),400
     

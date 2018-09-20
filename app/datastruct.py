@@ -40,14 +40,17 @@ class DataStruct:
         if self.orders:
             for order in self.orders:
                 if order["order_id"] == order_id:
-                    return order
+                    return [order]
             return None
         
     def update_order_status(self, status, order_id):
+        count = 0
         for order in self.orders:
             if order["order_id"] == order_id:
-                order["status"] == status
-            return order
-        return None
+                self.orders[count]["status"] = status
+                return [self.orders[count]]
+            count = count+1
+            return None     
+       
 
     
