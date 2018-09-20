@@ -3,7 +3,7 @@ from datastruct import DataStruct
 store = DataStruct()
 
 class Users:
-    """This class handles users, manipulation stuff"""
+    """This class handles creation and storing users in a Datastructure"""
 
     def __init__(self, full_name="", password="", email="", contact="" ,user_role=""):
         self.name = full_name
@@ -13,6 +13,7 @@ class Users:
         self.user_role = user_role 
 
     def save_user(self):
+        """The mothode creates a user and appends to the Datastructure"""
         if len(store.users) >= 1:
             self.id = store.users[-1]["user_id"]+1
         else:
@@ -25,7 +26,10 @@ class Users:
                 "contact": self.contact,
                 "user_role": "user"
             }
-        store.add_user(self.user)
+        store.users.append(self.user)
     
-    def validate_user(self):
+    def login(self):
+        pass
+
+    def signup(self):
         pass
