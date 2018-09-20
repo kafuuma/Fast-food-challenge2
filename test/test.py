@@ -148,18 +148,18 @@ class TestFastFood(unittest.TestCase):
          self.assertEqual(response.status_code, 200)
 
          self.assertEqual(response.status_code,200)
-        #  self.assertIn(
-        #      json.loads(response.data.decode()),
-        #             {"response":[
-        #                 {
-        #                     "menu_id": 1,
-        #                     "order_id": 1, 
-        #                     "status":"pending",
-        #                     "user_name":"henry henry"
-        #                 }
-        #             ]
+         self.assertIn(
+             json.loads(response.data.decode()),
+                    {"response":[
+                        {
+                            "menu_id": 1,
+                            "order_id": 1, 
+                            "status":"pending",
+                            "user_name":"henry henry"
+                        }
+                    ]
                 
-        #         })
+                })
     
     def test_fetch_non_existing_order_ByID(self):
         response = self.test_client.get(
@@ -190,18 +190,18 @@ class TestFastFood(unittest.TestCase):
                 )
             )
         self.assertEqual(response.status_code,200)
-        # self.assertIn(
-        #      json.loads(response.data.decode()),
-        #             {"response":[
-        #                 {
-        #                     "menu_id": 1,
-        #                     "order_id": 1, 
-        #                     "status":"delivered",
-        #                     "user_name":"henry henry"
-        #                 }
-        #             ]
+        self.assertIn(
+             json.loads(response.data.decode()),
+                    {"response":[
+                        {
+                            "menu_id": 1,
+                            "order_id": 1, 
+                            "status":"delivered",
+                            "user_name":"henry henry"
+                        }
+                    ]
                 
-        #         })
+                })
         
 
 
