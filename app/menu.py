@@ -19,4 +19,7 @@ class Menu:
             "description": self.description
         }
 
-        store.add_menu_item(self.menu_item)
+        store.menu.append(self.menu_item)
+
+    def fetch_meni_items(self):
+        pass
