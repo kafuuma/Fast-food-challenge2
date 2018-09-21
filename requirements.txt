@@ -1,4 +1,4 @@
-gitastroid==1.6.5
+astroid==1.6.5
 backports.functools-lru-cache==1.5
 click==6.7
 configparser==3.5.0
