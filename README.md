@@ -1,7 +1,11 @@
 # Fast Food Fast Challenge2
 [![Build Status](https://travis-ci.org/kafuuma/Fast-food-challenge2.svg?branch=develop)](https://travis-ci.org//kafuuma/Fast-food-challenge2)
+[![Coverage Status](https://coveralls.io/repos/github/kafuuma/Fast-food-challenge2/badge.svg?branch=develop)](https://coveralls.io/github/kafuuma/Fast-food-challenge2?branch=develop)
 
-[![Coverage Status](https://coveralls.io/repos/github/kafuuma/Fast-food-challenge2/badge.svg?branch=master)](https://coveralls.io/github/kafuuma/Fast-food-challenge2?branch=master)
+<[![Maintainability](https://api.codeclimate.com/v1/badges/f64f45feb6b0e3c52b7c/maintainability)](https://codeclimate.com/github/kafuuma/Fast-food-challenge2/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/f64f45feb6b0e3c52b7c/test_coverage)](https://codeclimate.com/github/kafuuma/Fast-food-challenge2/test_coverage)
+
+
 
 ## project overview
 
