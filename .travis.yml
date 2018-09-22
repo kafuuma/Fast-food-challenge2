@@ -11,10 +11,8 @@ script:
    - python -m unittest discover -v
 
 
-after_success:
-  - coveralls
-
-
+ after_success:
+   - coveralls
 
 
 
