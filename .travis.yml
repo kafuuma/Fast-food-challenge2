@@ -12,7 +12,8 @@ script:
 
 
 after_success:
-  - coveralls
+   - coveralls
+   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 
 
 
