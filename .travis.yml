@@ -9,6 +9,7 @@ install:
 # command to run tests
 script:
    - python -m unittest discover -v
+   - coverage report
 
 
  after_success:
