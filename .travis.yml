@@ -3,13 +3,14 @@ python:
   - "2.7.15"
 
 install:
-  - "pip install -r requirements.txt"
+  - pip install coveralls
+  - pip install -r requirements.txt
 
 
 
 script:
    - python -m unittest discover -v
-   - coverage report
+   - nosetests --with-coverage
 
  after_success:
    - coveralls
