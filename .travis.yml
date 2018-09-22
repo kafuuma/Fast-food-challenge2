@@ -11,11 +11,8 @@ script:
    - python -m unittest discover -v
 
 
-after_success:
+ after_success:
    - coveralls
-   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
-
-
 
 
 
