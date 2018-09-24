@@ -21,7 +21,6 @@ class TestFastFood(unittest.TestCase):
         self.user = Users()
         self.order = Orders()
         
-        #create a user and menu item
         Menu("Hot Burgar", "served with juice & ketchup").save_menu_item()
         Users("henry henry","@hhenry","myemail@gmail.com","555 555 555","user").save_user()
         
@@ -30,11 +29,24 @@ class TestFastFood(unittest.TestCase):
         self.store.menu[:] = []
         self.store.orders[:] = []
         self.store.orders[:] =[]
+    
+    def post_data(self):
+        """This method posts test data to datastructure object"""
+        response = self.test_client.post(
+                    "/api/v1/orders",
+                    content_type="application/json",
+                    data=json.dumps(
+                        {
+                            "user_name":"henry henry",
+                            "menu_id":1
+                        }
+                    )
+                )
+        return response
 
     def test_user_object_creation(self):
         self.assertIsInstance(self.user, Users)
        
-
     def test_menu_object_creation(self):
         self.assertIsInstance(self.menu, Menu)
 
@@ -42,58 +54,18 @@ class TestFastFood(unittest.TestCase):
         self.assertIsInstance(self.order, Orders)
     
     def test_place_an_order(self):
-        response = self.test_client.post(
-                "/api/v1/orders",
-                content_type="application/json",
-                data=json.dumps(
-                    {
-                        "user_name":"henry henry",
-                        "menu_id":1
-                    }
-                )
-        )
-        self.test_client.post(
-                "/api/v1/orders",
-                content_type="application/json",
-                data=json.dumps(
-                    {
-                        "user_name":"henry henry",
-                        "menu_id":1
-                    }
-                )
-        )
+        self.post_data()
+        response = self.post_data()
         self.assertEqual(response.status_code, 200)
-
         self.assertEqual(json.loads(response.data.decode()),{"response":"success"})
         self.assertEqual(len(self.store.orders),2)
 
     def test_fetch_all_orders(self):
-        self.test_client.post(
-                "/api/v1/orders",
-                content_type="application/json",
-                data=json.dumps(
-                    {
-                        "user_name":"henry henry",
-                        "menu_id":1
-                    }
-                )
-        )
-        self.test_client.post(
-                "/api/v1/orders",
-                content_type="application/json",
-                data=json.dumps(
-                    {
-                        "user_name":"henry henry",
-                        "menu_id":1
-                    }
-                )
-        )
-
+        self.post_data()
         response = self.test_client.get(
                 "/api/v1/orders",
 
         )
-
         self.assertEqual(response.status_code,201)
         self.assertIn({
                 "menu_id": 1,
@@ -104,7 +76,6 @@ class TestFastFood(unittest.TestCase):
             json.loads(response.data.decode())["response"]
         )
 
-
     def test_etch_non_existing_orders(self):
         response = self.test_client.get(
             "/api/v1/orders",
@@ -114,16 +85,7 @@ class TestFastFood(unittest.TestCase):
         self.assertEqual(response.status_code,400)
 
     def test_fetch_order_byId(self):
-         self.test_client.post(
-                "/api/v1/orders",
-                content_type="application/json",
-                data=json.dumps(
-                    {
-                        "user_name":"henry henry",
-                        "menu_id":1
-                    }
-                )
-        )
+         self.post_data()
          response = self.test_client.get(
                     "/api/v1/orders/1"
                 )
@@ -149,16 +111,7 @@ class TestFastFood(unittest.TestCase):
         self.assertEqual(json.loads(response.data.decode()),{"response":"order doesn't exist"})
 
     def test_update_order_status(self):
-        self.test_client.post(
-                "/api/v1/orders",
-                content_type="application/json",
-                data=json.dumps(
-                    {
-                        "user_name":"henry henry",
-                        "menu_id":1
-                    }
-                )
-        )
+        self.post_data()
         response = self.test_client.put(
                     "/api/v1/orders/1",
                     content_type="application/json",
@@ -183,10 +136,7 @@ class TestFastFood(unittest.TestCase):
                 
                 })
         
-
-
     def test_update_nonexisting_order_status(self):
-
         response = self.test_client.put(
                     "/api/v1/orders/3",
                     content_type="application/json",
