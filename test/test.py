@@ -67,22 +67,6 @@ class TestFastFood(unittest.TestCase):
         self.assertEqual(json.loads(response.data.decode()),{"response":"success"})
         self.assertEqual(len(self.store.orders),2)
 
-    @unittest.skip("existing menu_item")   
-    def test_place_nonexisting_menu_order(self):
-        response = self.test_client.post(
-            "/api/v1/orders",
-            content_type="application/json",
-            data=json.dumps(
-                {
-                    "user_name":"henry henry",
-                    "menu_id":0
-                }
-            )
-        )
-        self.assertEqual(response.status_code,400)
-        self.assertEqual(len(self.store.orders),0)
-        self.assertEqual(json.loads(response.data.decode()),{"reponse":"failure"})
-
     def test_fetch_all_orders(self):
         self.test_client.post(
                 "/api/v1/orders",
