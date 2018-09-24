@@ -44,7 +44,7 @@ class Orders:
             return None
     
     def update_order_status(self, status, order_id):
-        """This method updates a status of an existing order"""
+        """This method updates a status of an existing orderc"""
         count = 0
         for order in store.orders:
             if order["order_id"] == order_id:
