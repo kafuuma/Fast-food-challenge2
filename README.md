@@ -1,5 +1,5 @@
 # Fast Food Fast Challenge2
-[![Build Status](https://travis-ci.org/kafuuma/Fast-food-challenge2.svg?branch=develop)](https://travis-ci.org//kafuuma/Fast-food-challenge2)
+[![Build Status](https://travis-ci.org/kafuuma/Fast-food-challenge2.svg?branch=develop](https://travis-ci.org/kafuuma/Fast-food-challenge2/)
 [![Coverage Status](https://coveralls.io/repos/github/kafuuma/Fast-food-challenge2/badge.svg?branch=develop)](https://coveralls.io/github/kafuuma/Fast-food-challenge2?branch=develop)
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/f64f45feb6b0e3c52b7c/maintainability)](https://codeclimate.com/github/kafuuma/Fast-food-challenge2/maintainability)
@@ -10,7 +10,7 @@
 ## project overview
 
 This is a fast food delivery application for a fast food restaurent created\
-during Andela Bootcamp check, for UI[HERE](https://kafuuma.github.io/FAST-FOOD-APP/)
+during Andela Bootcamp check, for UI [HERE](https://kafuuma.github.io/FAST-FOOD-APP/)
 ## project overview
 
 ## features

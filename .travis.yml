@@ -3,7 +3,6 @@ python:
   - "2.7.15"
 
 install:
-  - pip install coveralls
   - pip install -r requirements.txt
 
 
