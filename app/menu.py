@@ -8,20 +8,12 @@ class Menu:
         self.description = description
 
     def save_menu_item(self):
-        """This method creates a menu item and appends it 
-        to the Datastructure storage"""
         if len(store.menu) >=1:
-            self.menu_id = store.menu[-1]["menu_id"]+1
+            self.menu_id = store.menu[-1]+1
         else:
             self.menu_id = 1
+        menu = Menu()
+        store.add_menu(menu)
 
-        self.menu_item = {
-            "menu_id": self.menu_id,
-            "menu_name": self.menu_name,
-            "description": self.description
-        }
-
-        store.menu.append(self.menu_item)
-
-    def fetch_meni_items(self):
+    def fetch_menu_items(self):
         pass

@@ -13,24 +13,15 @@ class Orders:
 
     def save_order(self):
         """This memthod appends orders to the Data structure"""
-        
         if len(store.orders) >=1:
-            self.order_id = store.orders[-1]["order_id"]+1
+            self.order_id = store.orders[-1]+1
         else:
             self.order_id = 1
-
-        self.order = {
-            "order_id": self.order_id,
-            "menu_id": self.menu_id,
-            "user_name": self.user_name,
-            "status":  self.status,
-        }
-
-        store.orders.append(self.order)
+        order = Orders()
+        store.add_orders(order)
 
     def fetch_all_orders(self):
         """This method fetches all orders"""
-        """This method returns all orders for users"""
         if len(store.orders) >= 0:
             return store.orders
         return None

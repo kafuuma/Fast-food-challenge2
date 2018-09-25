@@ -26,10 +26,8 @@ class TestFastFood(unittest.TestCase):
         
     def tearDown(self):
         self.store = DataStruct()
-        self.store.menu[:] = []
-        self.store.orders[:] = []
-        self.store.orders[:] =[]
-    
+        self.store.empty_data()
+        
     def post_data(self):
         """This method posts test data to datastructure object"""
         response = self.test_client.post(

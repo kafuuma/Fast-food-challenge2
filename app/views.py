@@ -36,7 +36,7 @@ def palce_order():
         user_name = user_order.get("user_name")
         menu_id = user_order.get("menu_id")
         Orders(user_name, menu_id).save_order()
-        if len(store.orders):
+        if store.orders:
             return jsonify({"response":"success"}),200
         return jsonify({"reponse":"failure"}),400
     return jsonify({"response":"no data supplied"}),404

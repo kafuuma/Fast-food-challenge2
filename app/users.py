@@ -15,17 +15,10 @@ class Users:
     def save_user(self):
         """The mothode creates a user and appends to the Datastructure"""
         if len(store.users) >= 1:
-            self.id = store.users[-1]["user_id"]+1
+            self.id = store.users[-1]+1
         else:
             self.id = 1
-        self.user = {
-                "user_id": self.id,
-                "name": self.name,
-                "password": self.password,
-                "email": self.email,
-                "contact": self.contact,
-                "user_role": "user"
-            }
+
         store.users.append(self.user)
     
     def login(self):
