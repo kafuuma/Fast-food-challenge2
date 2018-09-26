@@ -12,6 +12,6 @@ omit =
     */app/.pytest_cache/*
     */tests/__pycache__/*
     */tests/.pytest_cache/*
-    *tests*
+    *test*
     */.idea/*
     */.vscode/**
