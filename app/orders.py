@@ -24,26 +24,13 @@ class Orders:
                 )
             )
 
-    # def fetch_all_orders(self):
-    #     """This method fetches all orders"""
-    #     if len(store.orders) >= 0:
-    #         return store.orders
-    #     return None
-    
-    # def fetch_order(self, order_id):
-    #     """This method fetches a specific order"""
-    #     if store.orders:
-    #         for order in store.orders:
-    #             if order["order_id"] == order_id:
-    #                 return [order]
-    #         return None
-    
-    # def update_order_status(self, status, order_id):
-    #     """This method updates a status of an existing orderc"""
-    #     count = 0
-    #     for order in store.orders:
-    #         if order["order_id"] == order_id:
-    #             store.orders[count]["status"] = status
-    #             return [store.orders[count]]
-    #         count = count+1
-    #     return None   
+    def covert_order_to_dict(self, order_obj):
+        """This method coverts order object attributes into a diction
+        used by view fuctions to generate a json array"""
+        obj_data = {
+            "menu_id": order_obj.menu_id,
+            "order_id": order_obj.order_id,
+            "status": order_obj.status,
+            "user_name": order_obj.user_name
+        }
+        return obj_data
