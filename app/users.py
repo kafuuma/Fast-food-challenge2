@@ -1,5 +1,5 @@
 
-from datastruct import DataStruct
+from app.datastruct import DataStruct
 store = DataStruct()
 
 class Users:

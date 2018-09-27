@@ -1,5 +1,5 @@
-from datastruct import DataStruct
-from menu import Menu
+from app.datastruct import DataStruct
+from app.menu import Menu
 store = DataStruct()
 
 
