@@ -24,13 +24,4 @@ class Orders:
                 )
             )
 
-    def covert_order_to_dict(self, order_obj):
-        """This method coverts order object attributes into a diction
-        used by view fuctions to generate a json array"""
-        obj_data = {
-            "menu_id": order_obj.menu_id,
-            "order_id": order_obj.order_id,
-            "status": order_obj.status,
-            "user_name": order_obj.user_name
-        }
-        return obj_data
+
