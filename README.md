@@ -10,7 +10,7 @@
 This is a fast food delivery application for a fast food restaurent created\
 during Andela Bootcamp check, for UI [HERE](https://kafuuma.github.io/FAST-FOOD-APP/)
 
-The is deployed on Heroku [HER](https://dashboard.heroku.com/apps/fast-food-appn/deploy/github)
+The is deployed on Heroku [HERE](https://dashboard.heroku.com/apps/fast-food-appn/deploy/github)
 ## project overview
 
 ## features
