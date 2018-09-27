@@ -9,6 +9,8 @@
 
 This is a fast food delivery application for a fast food restaurent created\
 during Andela Bootcamp check, for UI [HERE](https://kafuuma.github.io/FAST-FOOD-APP/)
+
+The is deployed on Heroku [HER](https://dashboard.heroku.com/apps/fast-food-appn/deploy/github)
 ## project overview
 
 ## features
@@ -18,9 +20,9 @@ during Andela Bootcamp check, for UI [HERE](https://kafuuma.github.io/FAST-FOOD-
 3. The admin should be able to add,edit or delete the fast-food items
 4. The admin should be able to see a list of fast-food items
 5. The Admin user should be able to do the following:
-    _See a list of orders_
-    _Accept and decline orders_
-    _Mark orders as completed_
+    * _See a list of orders_
+    * _Accept and decline orders_
+    * _Mark orders as completed_
 6. A user should be able to see a history of ordered food
 
 ## Requirements
@@ -59,6 +61,9 @@ during Andela Bootcamp check, for UI [HERE](https://kafuuma.github.io/FAST-FOOD-
 * To run a test, You will have to cd into the project directory and run the command below
 ```sh
     $ python -m unittest discover -v
+   ```
+```sh
+    $ nosetests --with-coverage
    ```
 
 ## Built With
