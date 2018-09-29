@@ -1,27 +1,18 @@
-from datastruct import DataStruct
+from app.datastruct import DataStruct
 store = DataStruct()
 
 class Menu:
     """This class does all the menu related stuff"""
-    def __init__(self,menu_name="", description=""):
+    def __init__(self,menu_name="", description="", menu_id =0):
         self.menu_name = menu_name
         self.description = description
-
-    def save_menu_item(self):
-        """This method creates a menu item and appends it 
-        to the Datastructure storage"""
         if len(store.menu) >=1:
-            self.menu_id = store.menu[-1]["menu_id"]+1
+            self.menu_id = store.menu[-1].menu_id+1
         else:
             self.menu_id = 1
 
-        self.menu_item = {
-            "menu_id": self.menu_id,
-            "menu_name": self.menu_name,
-            "description": self.description
-        }
+    def save_menu_item(self):
+        store.add_menu(self)
 
-        store.menu.append(self.menu_item)
-
-    def fetch_meni_items(self):
+    def fetch_menu_items(self):
         pass

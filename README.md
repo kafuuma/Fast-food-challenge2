@@ -5,11 +5,9 @@ Challenge 2 Andela Bootcamp
 [![Coverage Status](https://coveralls.io/repos/github/kafuuma/Fast-food-challenge2/badge.svg?branch=master)](https://coveralls.io/github/kafuuma/Fast-food-challenge2?branch=master)
 =======
 # Fast Food Fast Challenge2
-[![Build Status](https://travis-ci.org/kafuuma/Fast-food-challenge2.svg?branch=develop)](https://travis-ci.org/kafuuma/Fast-food-challenge2/)
-[![Coverage Status](https://coveralls.io/repos/github/kafuuma/Fast-food-challenge2/badge.svg)](https://coveralls.io/github/kafuuma/Fast-food-challenge2)
-
+[![Build Status](https://travis-ci.org/kafuuma/Fast-food-challenge2.svg?branch=develop)](https://travis-ci.org/kafuuma/Fast-food-challenge2)
+[![Coverage Status](https://coveralls.io/repos/github/kafuuma/Fast-food-challenge2/badge.svg?branch=develop)](https://coveralls.io/github/kafuuma/Fast-food-challenge2?branch=develop)
 [![Maintainability](https://api.codeclimate.com/v1/badges/f64f45feb6b0e3c52b7c/maintainability)](https://codeclimate.com/github/kafuuma/Fast-food-challenge2/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/f64f45feb6b0e3c52b7c/test_coverage)](https://codeclimate.com/github/kafuuma/Fast-food-challenge2/test_coverage)
 
 
 
@@ -17,6 +15,8 @@ Challenge 2 Andela Bootcamp
 
 This is a fast food delivery application for a fast food restaurent created\
 during Andela Bootcamp check, for UI [HERE](https://kafuuma.github.io/FAST-FOOD-APP/)
+
+The is App deployed on Heroku [HERE](https://dashboard.heroku.com/apps/fast-food-appn/deploy/github)
 ## project overview
 
 ## features
@@ -26,9 +26,9 @@ during Andela Bootcamp check, for UI [HERE](https://kafuuma.github.io/FAST-FOOD-
 3. The admin should be able to add,edit or delete the fast-food items
 4. The admin should be able to see a list of fast-food items
 5. The Admin user should be able to do the following:
-    _See a list of orders_
-    _Accept and decline orders_
-    _Mark orders as completed_
+    * _See a list of orders_
+    * _Accept and decline orders_
+    * _Mark orders as completed_
 6. A user should be able to see a history of ordered food
 
 ## Requirements
@@ -67,6 +67,9 @@ during Andela Bootcamp check, for UI [HERE](https://kafuuma.github.io/FAST-FOOD-
 * To run a test, You will have to cd into the project directory and run the command below
 ```sh
     $ python -m unittest discover -v
+   ```
+```sh
+    $ nosetests --with-coverage
    ```
 
 ## Built With
